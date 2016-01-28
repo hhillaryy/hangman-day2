@@ -12,8 +12,8 @@ function Game () {
 //wordBank for random selection at the start of the game
 Game.prototype.randomSelect = function () {
   var wordBank = ["hello"];
-  randomWord = wordBank[Math.floor(Math.random()* wordBank.length)];
-  return randomWord = this.word;
+  var randomWord = wordBank[Math.floor(Math.random()* wordBank.length)];
+  return randomWord;
 };
 //player selects letter and this will check if the letter is in the word, true or false - adds one to mistakeCounter
 Game.prototype.letterSelect = function (letter, word) {

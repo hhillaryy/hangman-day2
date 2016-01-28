@@ -7,7 +7,12 @@ describe("hangmanWord", function() {
   });
 });
 
-describe ("game", function () {
+describe ("Game", function () {
+  it("will return a random word using randomSelect", function(){
+    var testGame = new Game();
+    var randomWord = this.word;
+    expect(testGame.randomSelect(randomWord)).to.equal("hello");
+  });
   it("will return true if letterSelect is  in the word", function () {
     var testGame = new Game();
     expect(testGame.letterSelect("a", "apple")).to.equal(true);
@@ -21,7 +26,7 @@ describe ("game", function () {
     expect(testGame.letterCounter("e", "energy")).to.eql([0,2]);
   });
 
-  it("will alert the player in the event they lose", function(){
+  it("will return true if game is over, false if game is still in play", function(){
     var testGame = new Game ();
     expect(testGame.letterSelect("c", "apple")).to.equal(false);
     expect(testGame.letterSelect("b", "apple")).to.equal(false);
