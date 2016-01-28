@@ -25,7 +25,7 @@ Game.prototype.blankSpaces = function() {
   }
   return blanks;
 };
-
+//above is for game to start
 //player selects letter and this will check if the letter is in the word, true or false - adds one to mistakeCounter
 Game.prototype.letterSelect = function(letter) {
   var word = this.gameWord.word;
@@ -66,3 +66,16 @@ Game.prototype.isGameWon = function() {
     return false;
   }
 };
+
+$(document).ready(function(){
+  var newGame = new Game();
+  $(".letters").click(function(){
+    var chosenLetter = $(this).val();
+    if(newGame.letterSelect(chosenLetter){
+      (newGame.letterCounter(chosenLetter){
+        // letter(s) go into blanks then button will change/disable color
+      })
+      // else it will return false and button will change/disable color 
+    }
+  });
+});
