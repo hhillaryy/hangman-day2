@@ -11,23 +11,23 @@ function Game () {
   this.correctCounter = 0;
 }
 //wordBank for random selection at the start of the game
-HangmanWord.prototype.randomSelect = function () {
+HangmanWord.prototype.randomSelect = function() {
   var wordBank = ["hello"];
   var randomWord = wordBank[Math.floor(Math.random()* wordBank.length)];
   return randomWord;
 };
-
+//it will take the gameWord and return blank spaces instead of letters
 Game.prototype.blankSpaces = function() {
   var blanks = []
   var word = this.gameWord.word
   for(var index = 0; index < word.length; index ++) {
-      blanks.push("_");
-    }
-    return blanks;
-  };
+    blanks.push("_");
+  }
+  return blanks;
+};
 
 //player selects letter and this will check if the letter is in the word, true or false - adds one to mistakeCounter
-Game.prototype.letterSelect = function (letter) {
+Game.prototype.letterSelect = function(letter) {
   var word = this.gameWord.word;
   for(var index = 0; index < word.length; index ++) {
     if (word[index] === letter) {
@@ -50,11 +50,19 @@ Game.prototype.letterCounter = function(letter) {
   this.correctCounter += letterCount.length;
   return letterCount;
 };
-
+//this will check if the game is lost
 Game.prototype.isGameLost = function() {
   if(this.mistakeCounter === 6) {
     return true;
   } else if(this.mistakeCounter < 6) {
+    return false;
+  }
+};
+//this will check if the game is won
+Game.prototype.isGameWon = function() {
+  if(this.correctCounter === this.gameWord.length) {
+    return true;
+  } else if(this.correctCounter < this.gameWord.length) {
     return false;
   }
 };
