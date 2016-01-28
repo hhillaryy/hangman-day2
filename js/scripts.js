@@ -16,6 +16,16 @@ HangmanWord.prototype.randomSelect = function () {
   var randomWord = wordBank[Math.floor(Math.random()* wordBank.length)];
   return randomWord;
 };
+
+Game.prototype.blankSpaces = function() {
+  var blanks = []
+  var word = this.gameWord.word
+  for(var index = 0; index < word.length; index ++) {
+      blanks.push("_");
+    }
+    return blanks;
+  };
+
 //player selects letter and this will check if the letter is in the word, true or false - adds one to mistakeCounter
 Game.prototype.letterSelect = function (letter) {
   var word = this.gameWord.word;

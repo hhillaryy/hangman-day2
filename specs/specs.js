@@ -12,6 +12,10 @@ describe ("Game", function () {
     var testGame = new Game();
     expect(testGame.gameWord.word).to.equal("hello");
   });
+  it("will take HangmanWord and replace them with blank spaces", function(){
+    var testGame = new Game();
+    expect(testGame.blankSpaces()).to.eql(["_","_","_","_","_"]);
+  });
   it("will return true if letterSelect is  in the word", function () {
     var testGame = new Game();
     expect(testGame.letterSelect("h")).to.equal(true);
