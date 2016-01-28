@@ -20,4 +20,15 @@ describe ("game", function () {
     var testGame = new Game();
     expect(testGame.letterCounter("e", "energy")).to.eql([0,2]);
   });
+
+  it("will alert the player in the event they lose", function(){
+    var testGame = new Game ();
+    expect(testGame.letterSelect("c", "apple")).to.equal(false);
+    expect(testGame.letterSelect("b", "apple")).to.equal(false);
+    expect(testGame.letterSelect("t", "apple")).to.equal(false);
+    expect(testGame.letterSelect("m", "apple")).to.equal(false);
+    expect(testGame.letterSelect("f", "apple")).to.equal(false);
+    expect(testGame.letterSelect("g", "apple")).to.equal(false);
+    expect(testGame.isGameOver()).to.equal(true);
+  });
 });

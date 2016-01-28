@@ -4,15 +4,16 @@ function hangmanWord (word) {
   this.length = word.length;
   this.letters = word.split("");
 }
-//if mistakeCounter equals 6, game over if correctCounter equals length of word they will win 
+//if mistakeCounter equals 6, game over if correctCounter equals length of word they will win
 function Game () {
   this.mistakeCounter = 0;
   this.correctCounter = 0;
 }
 //wordBank for random selection at the start of the game
 Game.prototype.randomSelect = function () {
-  var wordBank = ["hello", "apple", "candy", "apart", "diver", "store"];
+  var wordBank = ["hello"];
   randomWord = wordBank[Math.floor(Math.random()* wordBank.length)];
+  return randomWord = this.word;
 };
 //player selects letter and this will check if the letter is in the word, true or false - adds one to mistakeCounter
 Game.prototype.letterSelect = function (letter, word) {
@@ -34,5 +35,11 @@ Game.prototype.letterCounter = function(letter, word) {
     }
   }
   return letterCount;
-  this.correctCounter += 1;
+  this.correctCounter += letterCount.length;
+};
+
+Game.prototype.isGameOver = function(){
+  if(this.mistakeCounter = 6) {
+    return true;
+  }
 };
