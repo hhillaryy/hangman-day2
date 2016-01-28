@@ -25,6 +25,15 @@ Game.prototype.letterSelect = function (letter, word) {
     }
   }
 };
+Game.prototype.letterCounter = function(letter, word) {
+  var letterCount = []
+  for(var index = 0; index < word.length; index ++) {
+    if(word[index] === letter) {
+      letterCount.push(index);
+    }
+  }
+  return letterCount;
+};
 
 
 // var wordArray = function(word) {

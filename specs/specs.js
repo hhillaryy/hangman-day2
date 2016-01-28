@@ -16,6 +16,10 @@ describe ("game", function () {
     var testGame = new Game();
     expect(testGame.letterSelect("c", "apple")).to.equal(false);
   });
+  it("will calculate the number of times the letter appears in the word", function(){
+    var testGame = new Game();
+    expect(testGame.letterCounter("e", "energy")).to.eql([0,2]);
+  });
 });
 
 // it("will create game with given properties", function() {
