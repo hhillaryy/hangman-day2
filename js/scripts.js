@@ -71,11 +71,11 @@ $(document).ready(function(){
   var newGame = new Game();
   $(".letters").click(function(){
     var chosenLetter = $(this).val();
-    if(newGame.letterSelect(chosenLetter){
+    if(newGame.letterSelect(chosenLetter) {
       (newGame.letterCounter(chosenLetter){
         // letter(s) go into blanks then button will change/disable color
       })
-      // else it will return false and button will change/disable color 
+      // else it will return false and button will change/disable color
     }
   });
 });
